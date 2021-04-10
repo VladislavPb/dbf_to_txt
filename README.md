@@ -8,17 +8,6 @@ Script runs .dbf table (in other words - .shp attributive table) row by row (or 
 
 Resulting table should have a structure as shown below:
 
-00)4,10
-01)5,,20,,7
-@@
-00)5,12
-01)2.1,,13,,13
-@@
-00)5,11
-01)3,,12,,14
-@@
-00)6,10
-01)4,,11,,3
-@@
+![image](final_text_file_example.png)
 
 Script reads file path and name and write final .txt file with the same as initial .dbf
