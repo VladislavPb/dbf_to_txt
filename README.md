@@ -11,3 +11,5 @@ Resulting table should have a structure as shown below:
 ![image](final_text_file_example.png)
 
 Script reads file path and name and write final .txt file with the same as initial .dbf
+
+Script uses default Python packages + QGis internal package named <i>iface</i> for geoinformatic data processing.
