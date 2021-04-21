@@ -1,15 +1,13 @@
 # dbf_to_txt
-Convert forest inventory database in .dbf format into .txt files
+Преобразуем базу данных лесной таксации в формате .dbf в файл формата .txt
 
-This script runs in QGis (https://github.com/qgis) Python script console and works properly when active layer is a forest inventory .dbf file with specific columns, as shown on the image below:
+Данный скрипт запускается в QGIS (https://github.com/qgis) в консоли Python и работоспособен когда активным слоем является база данных в формате .dbf с определенными колонками, как показано на изображении ниже (файл sample.dbf в репозитории):
 ![image](initial_table_example.png)
 
-Script runs .dbf table (in other words - .shp attributive table) row by row (or object by object), in each cycle reading columns (or features in GIS language). Rows can be ordered in a complete mess, and final file should contain objects in specific order, sorting them by two features in ascending order.
-
-Resulting table should have a structure as shown below:
-
+Скрипт сканирует с помощью цикла строкам по атрибутивной таблице файла (которые соответствуют определенным географическим объектам), внутри которого находится цикл, прохождения по колонкам (или свойствам объектов). Данные из каждой строки записываются в кортеж, который в свою очередь присоединяется к списку. Далее идет двойная сортировка элементов списка (по номеру квартала и номера выдела) в порядке возрастания.
+Результирующий текстовый файл должен иметь структуру как на изображении ниже (файл sample.txt в репозитории):
 ![image](final_text_file_example.png)
 
-Script reads file path and name and write final .txt file with the same as initial .dbf
+Скрипт считывает путь до исходного .dbf файла и его название без расширения, записывая результирующий .txt файл в ту же папку, что и исходный.
 
-Script uses default Python packages + QGis internal package named <i>iface</i> for geoinformatic data processing.
+Скрипт использует встроенный в QGIS интерпретатор QGIS, в котором есть внутренний пакет <i>iface</i> для обработки геоинформационных данных.
